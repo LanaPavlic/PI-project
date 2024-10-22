@@ -12,26 +12,22 @@
     <div class="container">
       <div class="form_area">
         <h4 class="title">SIGN UP</h4>
-        <form>
+        <form @submit.prevent="signup">
           <div class="form_group">
-            <label for="name" class="sub_title">Name</label>
-            <input type="text" class="form_style" id="name" placeholder="Enter your full name">
-          </div>
-          <div class="form_group">
-            <label for="email" class="sub_title">Email</label>
-            <input type="email" class="form_style" id="email" placeholder="Enter your email" />
+            <label for="name" class="sub_title">Email</label>
+            <input v-model="username" type="email" class="form_style" id="email" placeholder="Enter your email" />
           </div>
           <div class="form_group">
             <label for="password" class="sub_title">Password</label>
-            <input type="password" class="form_style" id="password" placeholder="Enter your password" />
+            <input v-model="password" type="password" class="form_style" id="password" placeholder="Enter your password" />
           </div>
           <div class="form_group">
             <label for="repeat-password" class="sub_title">Repeat Password</label>
-            <input type="password" class="form_style" id="repeat-password" placeholder="Repeat your password" />
+            <input v-model="passwordRepeat" type="password" class="form_style" id="repeat-password" placeholder="Repeat your password" />
           </div>
           <div>
             <button type="submit" class="btn">SIGN UP!</button>
-            <p>Have an Account? <a href="" class="link">Login Here!</a></p>
+            <p>Have an Account? <a href="" @click.prevent="goToLogin" class="link">Login Here!</a></p>
           </div>
         </form>
       </div>
@@ -40,7 +36,46 @@
 </template>
 
 <script>
-// No changes to your script logic needed
+import { auth } from "@/firebase";  
+import { createUserWithEmailAndPassword } from "firebase/auth"; 
+
+export default { 
+  name: "Signup", 
+  data() { 
+    return { 
+      username: "", 
+      password: "", 
+      passwordRepeat: "", 
+    }; 
+  }, 
+  methods: { 
+    async signup() { 
+      if (this.password !== this.passwordRepeat) { 
+        alert("Lozinke nisu jednake");
+        return; 
+      } 
+
+      if (this.password.length < 6) { 
+        alert("Lozinka mora sadržavati minimalno 6 znakova");
+        return; 
+      } 
+
+      try { 
+        await createUserWithEmailAndPassword(auth, this.username, this.password); 
+        alert("Korisnik je uspješno registriran");
+
+        this.$router.push('/home'); 
+      } catch (error) { 
+        console.error("Pogreška pri registraciji korisnika:", error); 
+        alert(error.message);  
+      } 
+    }, 
+
+    goToLogin() {
+      this.$router.push("/login");
+    },
+  }, 
+};
 </script>
 
 <style>

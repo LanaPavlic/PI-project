@@ -1,12 +1,11 @@
-<script setup>
-import { RouterLink, RouterView } from 'vue-router';
-</script>
-
 <template>
-
-  <main>
-    <!-- RouterView will dynamically display components based on the route -->
-    <RouterView />
-  </main>
+  <div id="app">
+    <router-view></router-view> <!-- This is crucial for the router to work -->
+  </div>
 </template>
 
+<script>
+export default {
+  name: 'App',
+};
+</script>

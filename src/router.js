@@ -6,7 +6,8 @@ import Home from './components/HelloWorld.vue';
 
 const routes = [
     { path: '/', name: 'Signup', component: Signup },
-    { path: '/login', name: 'Login', component: Login },
+    { path: '/Login.vue', name: 'Login', component: Login },
+    { path: '/Home.vue', name: 'Home', component: Home },
 ];
 
 const router = createRouter({
