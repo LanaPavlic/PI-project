@@ -1,6 +1,5 @@
 <template>
   <div>
-    <!-- Header Section -->
     <header class="header">
       <div class="logo-container">
         <img src="/slika3.png.jpg" alt="Logo" class="logo" />
@@ -36,46 +35,7 @@
 </template>
 
 <script>
-import { auth } from "@/firebase";  
-import { createUserWithEmailAndPassword } from "firebase/auth"; 
 
-export default { 
-  name: "Signup", 
-  data() { 
-    return { 
-      username: "", 
-      password: "", 
-      passwordRepeat: "", 
-    }; 
-  }, 
-  methods: { 
-    async signup() { 
-      if (this.password !== this.passwordRepeat) { 
-        alert("Lozinke nisu jednake");
-        return; 
-      } 
-
-      if (this.password.length < 6) { 
-        alert("Lozinka mora sadržavati minimalno 6 znakova");
-        return; 
-      } 
-
-      try { 
-        await createUserWithEmailAndPassword(auth, this.username, this.password); 
-        alert("Korisnik je uspješno registriran");
-
-        this.$router.push('/home'); 
-      } catch (error) { 
-        console.error("Pogreška pri registraciji korisnika:", error); 
-        alert(error.message);  
-      } 
-    }, 
-
-    goToLogin() {
-      this.$router.push("/login");
-    },
-  }, 
-};
 </script>
 
 <style>
@@ -91,7 +51,7 @@ body {
   font-family: 'Poppins', sans-serif;
   height: 100vh;
   width: 100vw;
-  background-color: #FF69B4; 
+  background-color: #FF69B4;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -99,16 +59,16 @@ body {
 }
 
 .header {
-  width: 100%; 
-  background-color: #fff; 
-  padding: 5px 0; 
+  width: 100%;
+  background-color: #fff;
+  padding: 5px 0;
   text-align: center;
   position: fixed;
   top: 0;
   left: 0;
-  border: 2px solid #FF00BF; 
+  border: 2px solid #FF00BF;
   box-sizing: border-box;
-  display: flex; 
+  display: flex;
   align-items: center;
 }
 
@@ -117,15 +77,15 @@ body {
 }
 
 .logo {
-  width: 100px; 
+  width: 100px;
   height: auto;
 }
 
 .header_title {
-  color: #ff00bf; 
+  color: #ff00bf;
   font-weight: 900;
   font-size: 2em;
-  flex-grow: 1; 
+  flex-grow: 1;
 }
 
 .container {
@@ -133,7 +93,7 @@ body {
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin-top: 130px; 
+  margin-top: 130px;
 }
 
 .form_area {
@@ -176,7 +136,7 @@ body {
 
 .form_style:focus {
   border-color: #ff69b4;
-  box-shadow: 0 0 10px rgba(255, 105, 180, 0.5); 
+  box-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
 }
 
 .btn {
@@ -189,13 +149,13 @@ body {
   font-weight: bold;
   font-size: 16px;
   cursor: pointer;
-  box-shadow: 5px 5px 0px 0px #ff00bf; 
+  box-shadow: 5px 5px 0px 0px #ff00bf;
   transition: all 0.3s ease;
 }
 
 .btn:hover {
   background-color: #ff00bf;
-  box-shadow: 7px 7px 17px rgba(255, 0, 191, 0.8); 
+  box-shadow: 7px 7px 17px rgba(255, 0, 191, 0.8);
 }
 
 p {

@@ -1,11 +1,18 @@
-<template>
-  <div id="app">
-    <router-view></router-view> <!-- This is crucial for the router to work -->
-  </div>
-</template>
-
-<script>
-export default {
-  name: 'App',
-};
+<script setup>
+import { RouterLink, RouterView } from 'vue-router';
 </script>
+
+<template>
+  <header>
+    <div class="wrapper">
+      <!-- Navigation Links -->
+      <RouterLink to="/login">Login</RouterLink> |
+      <RouterLink to="/signup">Signup</RouterLink>
+    </div>
+  </header>
+
+  <main>
+    <!-- RouterView will dynamically display components based on the route -->
+    <RouterView />
+  </main>
+</template>

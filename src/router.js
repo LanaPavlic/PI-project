@@ -5,9 +5,9 @@ import Signup from './views/Signup.vue';
 import Home from './components/HelloWorld.vue';
 
 const routes = [
-    { path: '/', name: 'Signup', component: Signup },
-    { path: '/Login.vue', name: 'Login', component: Login },
-    { path: '/Home.vue', name: 'Home', component: Home },
+    { path: '/', name: 'Home', component: Home },
+    { path: '/login', name: 'Login', component: Login },
+    { path: '/signup', name: 'Signup', component: Signup },
 ];
 
 const router = createRouter({
