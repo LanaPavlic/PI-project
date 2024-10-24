@@ -76,7 +76,10 @@ body {
   font-family: 'Poppins', sans-serif;
   height: 100vh;
   width: 100vw;
-  background-color: #FF69B4;
+ background-image: url('/slika4.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -91,7 +94,7 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  border: 2px solid #FF00BF;
+  border: 2px solid #ff69b4;
   box-sizing: border-box;
   display: flex;
   align-items: center;
@@ -107,7 +110,7 @@ body {
 }
 
 .header_title {
-  color: #ff00bf;
+  color: #ff69b4;
   font-weight: 900;
   font-size: 2em;
   flex-grow: 1;
@@ -129,11 +132,11 @@ body {
   background-color: #fff;
   padding: 20px;
   border-radius: 20px;
-  box-shadow: 15px 15px 10px 0px #ff00bf;
+  box-shadow: 5px 15px 110px 0px #ff69b4;
 }
 
 .title {
-  color: #ff00bf;
+  color: #ff69b4;
   font-weight: 900;
   font-size: 2em;
   margin-bottom: 20px;
@@ -152,7 +155,7 @@ body {
 .form_style {
   width: 100%;
   padding: 12px 15px;
-  border: 2px solid #ff00bf;
+  border: 2px solid #ff69b4;
   border-radius: 10px;
   font-size: 16px;
   outline: none;
@@ -174,13 +177,13 @@ body {
   font-weight: bold;
   font-size: 16px;
   cursor: pointer;
-  box-shadow: 5px 5px 0px 0px #ff00bf;
+  box-shadow: 5px 5px 0px 0px #ff69b4;
   transition: all 0.3s ease;
 }
 
 .btn:hover {
-  background-color: #ff00bf;
-  box-shadow: 7px 7px 17px rgba(255, 0, 191, 0.8);
+  background-color: #ff69b4;
+  box-shadow: 7px 7px 17px #ff69b4;
 }
 
 p {
@@ -189,7 +192,7 @@ p {
 }
 
 .link {
-  color: #ff00bf;
+  color: #ff69b4;
   text-decoration: none;
 }
 

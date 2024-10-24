@@ -88,12 +88,16 @@ body {
   font-family: 'Poppins', sans-serif;
   height: 100vh;
   width: 100vw;
-  background-color: #FF69B4;
+ background-image: url('/slika4.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
 }
+
 
 .header {
   width: 100%;
