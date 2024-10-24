@@ -23,6 +23,7 @@
           </div>
           <div>
             <button type="submit" class="btn">LOG IN</button>
+            <p>Don't have an Account? <a href="" @click.prevent="goToSignup" class="link">Sign Up Here!</a></p>
           </div>
         </form>
       </div>
@@ -31,8 +32,36 @@
 </template>
 
 <script>
+import { auth } from "@/firebase";
+import { signInWithEmailAndPassword } from "firebase/auth";
 
+export default {
+  name: 'login',
+  data() {
+    return {
+      username: '',
+      password: ''
+    }
+  },
+  methods: {
+    async login() {
+      console.log('login' + this.username);
+
+      try {
+        const result = await signInWithEmailAndPassword(auth, this.username, this.password);
+        console.log("Uspješna prijava.", result);
+        this.$router.replace('/home'); // Pretpostavljam da postoji ruta '/home' koja vodi na Home.vue
+      } catch (e) {
+        console.error("Greška", e);
+      }
+    },
+    goToSignup() {
+      this.$router.push({ name: 'Signup' }); // Preusmjeri na Signup.vue
+    }
+  }
+};
 </script>
+
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');

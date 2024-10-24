@@ -26,7 +26,7 @@
           </div>
           <div>
             <button type="submit" class="btn">SIGN UP!</button>
-            <p>Have an Account? <a href="" @click.prevent="goToLogin" class="link">Login Here!</a></p>
+            <p>Have an Account? <a href="" @click.prevent="goToLogin" class="link">Log In Here!</a></p>
           </div>
         </form>
       </div>
