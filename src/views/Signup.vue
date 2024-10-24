@@ -35,7 +35,44 @@
 </template>
 
 <script>
+import { auth } from "@/firebase";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 
+export default {
+  name: "Signup",
+  data() {
+    return {
+      username: "",
+      password: "",
+      passwordRepeat: "",
+    };
+  },
+  methods: {
+    async signup() {
+      if (this.password !== this.passwordRepeat) {
+        alert("Lozinke nisu jednake");
+        return;
+      }
+
+      if (this.password.length < 6) {
+        alert("Lozinka mora sadržavati minimalno 6 znakova");
+        return;
+      }
+
+      try {
+        await createUserWithEmailAndPassword(auth, this.username, this.password);
+        alert("Korisnik je uspješno registriran");
+        this.$router.push({ name: 'Home' }); // Preusmjeri na Home
+      } catch (error) {
+        console.error("Pogreška pri registraciji korisnika:", error);
+        alert(error.message);
+      }
+    },
+    goToLogin() {
+      this.$router.push({ name: 'Login' }); // Preusmjeri na Login
+    },
+  },
+};
 </script>
 
 <style>
