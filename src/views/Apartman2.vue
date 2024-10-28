@@ -5,14 +5,14 @@
         <img src="/slika3.png.jpg" alt="Logo" class="logo" />
       </div>
       <h1 class="header_title">PINK HEART APARTMENTS</h1>
-      <h2 class="header_title">ATRAKCIJE I AKTIVNOSTI</h2>
+      <h2 class="header_title">APARTMAN 2</h2>
     </header>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Aktivnosti",
+  name: "Apartman2",
 };
 </script>
 
@@ -69,3 +69,4 @@ body {
   flex-grow: 1;
 }
 </style>
+
