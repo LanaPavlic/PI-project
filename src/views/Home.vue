@@ -101,6 +101,12 @@ import app1Img9 from './App1/slika9.jpg';
 import app1Img10 from './App1/slika10.jpg';
 import app1Img11 from './App1/slika11.jpg';
 
+import app2Img0 from './App2/ap21.jpg';
+import app2Img1 from './App2/ap22.jpg';
+import app2Img2 from './App2/ap23.jpg';
+import app2Img3 from './App2/ap24.jpg';
+
+
 export default {
   name: "Home",
   data() {
@@ -310,7 +316,7 @@ html, body {
 }
 
 .atrakcije-text {
-  margin: 0px 0; /* Smanji razmak iznad i ispod teksta */
+  margin: px 0; /* Smanji razmak iznad i ispod teksta */
   line-height: 1.5; /* Povećava razmak između redova */
   font-size: 1.2rem; /* Povećana veličina fonta */
   text-align: center; /* Centriranje teksta */

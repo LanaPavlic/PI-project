@@ -1,7 +1,4 @@
 <template>
-
- 
-
   <header v-if="!hideHeader" class="header">
     <div class="logo-container">
       <img src="/slika3.png.jpg" alt="Logo" class="logo" />
@@ -16,10 +13,11 @@
   <main>
     <RouterView @hide-header="hideHeader = true" @show-header="hideHeader = false" />
     <div class="image-container" v-if="route.path === '/'">
+      <h2 class="image-title">Apartmani - Labin - Salakovci, Hrvatska</h2>
+      <img src="/zvjlog.png" alt="Zvjlog" class="zvjlog-image" />
       <img src="/slika5.jpg" alt="Slika 5" class="center-image" />
     </div>
   </main>
-
 </template>
 
 <script setup>
@@ -109,19 +107,41 @@ body {
   margin-top: 130px;
 }
 
-.image-container {
-  display: flex;
-  justify-content: center; /* Centriranje slike horizontalno */
-  align-items: center;    /* Centriranje slike vertikalno */
-  margin-top: 140px;     /* Razmak iznad slike, prilagodi po potrebi */
+.image-title {
+  color: black; /* Ružičasta boja */
+  font-weight: 700; /* Debeli font */
+  font-size: 1.5em; /* Veličina fonta */
+  text-align: center; /* Centriranje teksta */
+  margin-bottom: 5px; /* Smanji razmak ispod naslova */
+}
+
+.zvjlog-image {
+  max-width: 100px; /* Prilagodi veličinu po potrebi */
+  height: auto;     /* Održava proporcije slike */
+  margin: 5px 0;   /* Smanji razmak iznad i ispod slike */
 }
 
 .center-image {
-  max-width: 120%;        /* Povećana maksimalna širina na 70% */
+  max-width: 120%;        /* Povećana maksimalna širina na 120% */
   max-height: 400px;     /* Povećana maksimalna visina na 400px */
   height: auto;          /* Održava proporcije slike */
-  box-shadow: 0 0 15px 5px #ff00bf; /* Sjena oko slike */
+  margin: 5px 0;         /* Smanji razmak iznad i ispod slike */
 }
+
+.image-container {
+  display: flex;
+  flex-direction: column; /* Stavljamo elemente jedan ispod drugog */
+  justify-content: flex-start; /* Poravnaj gornji dio */
+  align-items: center;    /* Centriranje slika horizontalno */
+  margin-top: 120px;      /* Smanji razmak iznad slike, prilagodi po potrebi */
+  padding: 10px;         /* Razmak unutar okvira */
+  border: 5px solid white; /* Bijeli okvir oko slike */
+  border-radius: 10px;   /* Zaobljeni rubovi okvira */
+  background-color: rgba(255, 255, 255, 0.8); /* Pozadina unutar okvira s malo prozirnosti */
+  max-height: 100%;      /* Osiguraj da se ne prelazi visina ekrana */
+  overflow: hidden;      /* Skriveni sadržaj koji izlazi iz okvira */
+}
+
 
 .form_area {
   display: flex;

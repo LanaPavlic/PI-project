@@ -132,7 +132,7 @@ body {
   background-color: #fff;
   padding: 20px;
   border-radius: 20px;
-  box-shadow: 5px 15px 110px 0px #ff69b4;
+
 }
 
 .title {
