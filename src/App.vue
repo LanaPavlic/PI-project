@@ -1,4 +1,7 @@
 <template>
+
+ 
+
   <header v-if="!hideHeader" class="header">
     <div class="logo-container">
       <img src="/slika3.png.jpg" alt="Logo" class="logo" />
@@ -16,6 +19,7 @@
       <img src="/slika5.jpg" alt="Slika 5" class="center-image" />
     </div>
   </main>
+
 </template>
 
 <script setup>

@@ -12,11 +12,19 @@
     </nav>
       </div>
     </header>
+
+ <!-- Atrakcije tekst iznad fiksnih slika grada -->
+    <div class="atrakcije-text" style="margin-top: 130px;">
+      Uživajte u nezaboravnom odmoru u našem apartmanu, smještenom u mirnom selu Salakovci, blizu Labina. Ovdje možete istraživati prekrasne plaže, slikovite šetnice i bogatu kulturnu baštinu. Opustite se uz more, uživajte u domaćim specijalitetima i doživite sve ljepote Istre. Rezervirajte svoj boravak i pronađite svoj kutak raja u Salakovcima!
+    </div>
+
+
     <div class="content">
       <!-- Fixed Image Set for Grad Images -->
       <div class="fixed-image-gallery">
         <img v-for="(image, index) in imagesGrad" :key="'grad-' + index" :src="image" alt="Grad Image" class="fixed-image">
       </div>
+
 
       <div class="apartman-title" id="apartman1">Apartman 1</div>
       <!-- Carousel for Apartman 1 Images -->
@@ -48,11 +56,25 @@
         <button @click="nextImage('app3')" class="nav-button right">&#8250;</button>
       </div>
 
-      <div class="apartman-title">Atrakcije i Aktivnosti</div>
-      <div class="atrakcije-text">
-        Labin i njegova okolica nude pregršt atrakcija i aktivnosti koje će vam omogućiti da maksimalno uživate u vašem odmoru. Od predivnih plaža i prirodnih ljepota do kulturnih znamenitosti i sportskih aktivnosti, ovdje svatko može pronaći nešto zanimljivo za raditi i vidjeti.
-      </div>
-      <div class="spacer"></div>
+  
+
+<!-- Logo s lijeve strane i tekst s desne -->
+<div class="logo-container">
+  <img src="/logslika.png" alt="Logo" class="logo">
+  <div class="logo-text">Salakovci 12b, 52220, Salakovci</div>
+</div>
+
+<img src="/karta.jpg" alt="Karta" class="karta-image">
+<div class="spacer"></div>
+
+<footer class="footer">
+  <div class="footer-content">
+    <p>Email: info@pinkheartapartments.com</p>
+    <p>Telefon: +385 91 234 5678</p>
+    <p>Adresa: Salakovci 12b, 52220, Salakovci</p>
+  </div>
+</footer>
+
     </div>
   </div>
 </template>
@@ -288,20 +310,62 @@ html, body {
 }
 
 .atrakcije-text {
-  background-color: #fff;
-  color: #000;
-  font-size: 18px;
-  padding: 10px 20px;
-  margin: 20px;
-  border: 2px solid #ff69b4;
-  border-radius: 10px;
-  width: calc(100% - 40px);
-  max-width: 100%;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0px 0; /* Smanji razmak iznad i ispod teksta */
+  line-height: 1.5; /* Povećava razmak između redova */
+  font-size: 1.2rem; /* Povećana veličina fonta */
+  text-align: center; /* Centriranje teksta */
+  color: black; /* Ružičasta boja teksta */
+  background-color: rgba(255, 255, 255, 0.8); /* Lagana bijela pozadina */
+  padding: 10px; /* Unutarnje margine za bolji izgled */
+  border-radius: 10px; /* Okrugli rubovi pozadine */
 }
+
+.fixed-image-gallery {
+  margin-top: 0; /* Ukloni razmak iznad slika */
+  padding-top: 10px; /* Ako je potrebno, možeš dodati malo paddinga da razmakneš slike */
+}
+
 
 .spacer {
   height: 40px;
 }
+
+.logo-container {
+  display: flex; /* Koristi flexbox za poravnavanje */
+  align-items: center; /* Vertikalno poravnanje loga i teksta */
+  justify-content: center; /* Centriranje cijelog kontejnera */
+  margin-bottom: 20px; /* Razmak ispod loga i teksta */
+}
+
+.logo {
+  width: 50px; /* Širina loga (prilagodi prema potrebi) */
+  height: auto; /* Očuvanje omjera */
+  margin-right: 10px; /* Razmak između loga i teksta */
+}
+
+.logo-text {
+  font-size: 20px; /* Veličina fonta za tekst */
+  color: white; /* Boja teksta */
+}
+.karta-image {
+  display: block; /* Ovaj stil omogućava centriranje */
+  margin: 20px auto; /* Postavlja marginu automatski s lijeve i desne strane, a i razmak iznad i ispod */
+  max-width: 100%; /* Osiguraj da slika ne izlazi izvan granica */
+  height: auto; /* Očuvanje omjera */
+}
+.footer {
+  background-color: white; /* Bijela pozadina */
+  color: #FF69B4; /* Ružičasta boja teksta (možeš prilagoditi nijansu) */
+  text-align: center; /* Centriranje teksta */
+  padding: 20px; /* Unutarnji razmak */
+  position: relative; /* Pozicioniranje */
+  bottom: 0; /* Drži ga na dnu */
+  width: 100%; /* Širina podnožja */
+}
+
+.footer-content p {
+  margin: 5px 0; /* Razmak između paragrafa */
+  font-size: 16px; /* Veličina fonta */
+}
+
 </style>

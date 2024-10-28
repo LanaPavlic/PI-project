@@ -7,6 +7,10 @@
       <h1 class="header_title">PINK HEART APARTMENTS</h1>
       <h2 class="header_title">APARTMAN 2</h2>
     </header>
+    
+    <div class="content">
+      <img src="./App1/slika1.jpg" alt="Apartman 2" class="apartman-image" />
+    </div>
   </div>
 </template>
 
@@ -67,5 +71,15 @@ body {
   font-weight: 900;
   font-size: 2em;
   flex-grow: 1;
+}
+
+.content {
+  margin-top: 100px; /* Razmak od headera */
+}
+
+.apartman-image {
+  width: 600px; /* Širina slike apartmana */
+  height: auto;
+  border-radius: 10px; /* Okrugli rubovi */
 }
 </style>
