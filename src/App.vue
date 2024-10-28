@@ -1,16 +1,9 @@
-<script setup>
-import { RouterLink, RouterView } from 'vue-router';
-import { useRoute } from 'vue-router';
-
-const route = useRoute(); // Uzimanje trenutne rute
-</script>
-
 <template>
-  <header class="header">
+  <header v-if="!hideHeader" class="header">
     <div class="logo-container">
       <img src="/slika3.png.jpg" alt="Logo" class="logo" />
     </div>
-    <div class="header_title">WELCOME TO PINK HEART APARTMENTS</div>
+    <h1 class="header_title">PINK HEART APARTMENTS</h1>
     <div class="wrapper">
       <RouterLink to="/login">Login</RouterLink> |
       <RouterLink to="/signup">Signup</RouterLink>
@@ -18,13 +11,20 @@ const route = useRoute(); // Uzimanje trenutne rute
   </header>
 
   <main>
-    <RouterView />
-    <!-- Uvjetno prikazivanje slike samo na homepage -->
+    <RouterView @hide-header="hideHeader = true" @show-header="hideHeader = false" />
     <div class="image-container" v-if="route.path === '/'">
       <img src="/slika5.jpg" alt="Slika 5" class="center-image" />
     </div>
   </main>
 </template>
+
+<script setup>
+import { ref } from 'vue';
+import { useRoute } from 'vue-router';
+
+const hideHeader = ref(false); // Prikazuje ili skriva header
+const route = useRoute(); // Uzimanje trenutne rute
+</script>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');

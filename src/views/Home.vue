@@ -4,12 +4,12 @@
       <img src="/slika3.png.jpg" alt="Logo" class="logo">
       <div class="title-nav-container">
         <h1 class="title">PINK HEART APARTMENTS</h1>
-        <nav class="nav-links">
-          <a href="#apartman1">APARTMAN 1</a>
-          <a href="#apartman2">APARTMAN 2</a>
-          <a href="#apartman3">APARTMAN 3</a>
-          <a href="#atrakcije">ATRAKCIJE I AKTIVNOSTI</a>
-        </nav>
+        <nav>
+      <RouterLink to="/apartman1">Apartman 1</RouterLink>
+      <RouterLink to="/apartman2">Apartman 2</RouterLink>
+      <RouterLink to="/apartman3">Apartman 3</RouterLink>
+      <RouterLink to="/aktivnosti">Atrakcije i aktivnosti</RouterLink>
+    </nav>
       </div>
     </header>
     <div class="content">
@@ -121,7 +121,6 @@ export default {
         images = this.imagesApp1;
         currentIndex = this.currentIndexApp3;
       }
-      // Show 3 images at a time
       return [
         images[currentIndex],
         images[(currentIndex + 1) % images.length],
@@ -131,6 +130,7 @@ export default {
   }
 };
 </script>
+
 
 <style>
 * {
