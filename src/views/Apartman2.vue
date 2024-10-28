@@ -7,10 +7,42 @@
       <h1 class="header_title">PINK HEART APARTMENTS</h1>
       <h2 class="header_title">APARTMAN 2</h2>
     </header>
-    
-    <div class="content">
-      <img src="./App1/slika1.jpg" alt="Apartman 2" class="apartman-image" />
-    </div>
+
+    <main>
+      <div class="intro-container">
+        <h3>Dobrodošli u Apartman 2</h3>
+        <p>Uživajte u šarmu i udobnosti Apartmana 2, savršenog za vaš odmor u mirnom okruženju.</p>
+      </div>
+
+      <div class="apartman-container">
+        <!-- Slika i opis apartmana -->
+        <div class="apartman">
+          <img src="@/views/App2/ap21.jpg" alt="Apartman 2 - Slika 1" class="apartman-image" />
+          <div class="apartman-text">
+            <h3>O Apartmanu 2</h3>
+            <p>Apartman 2 nudi moderan interijer, prostrani dnevni boravak, te udobne spavaće sobe s pogledom na prirodu. Savršeno za opuštanje nakon istraživanja okolice.</p>
+          </div>
+        </div>
+
+        <!-- Druga slika apartmana -->
+        <div class="apartman">
+          <img src="@/views/App2/ap22.jpg" alt="Apartman 2 - Slika 2" class="apartman-image" />
+          <div class="apartman-text">
+            <h3>Prostrana terasa</h3>
+            <p>Uživajte na privatnoj terasi s pogledom na vrt, idealnoj za jutarnje kave ili opuštanje uz zalazak sunca.</p>
+          </div>
+        </div>
+
+        <!-- Treća slika apartmana -->
+        <div class="apartman">
+          <img src="@/views/App2/ap23.jpg" alt="Apartman 2 - Slika 3" class="apartman-image" />
+          <div class="apartman-text">
+            <h3>Potpuno opremljena kuhinja</h3>
+            <p>Kuhinja je opremljena svim potrebnim aparatima, omogućujući vam pripremu omiljenih obroka tijekom boravka.</p>
+          </div>
+        </div>
+      </div>
+    </main>
   </div>
 </template>
 
@@ -73,13 +105,51 @@ body {
   flex-grow: 1;
 }
 
-.content {
-  margin-top: 100px; /* Razmak od headera */
+.intro-container {
+  margin-top: 120px; /* Da se izbjegne preklapanje s headerom */
+  text-align: center;
+  color: black;
+}
+
+.intro-container h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.intro-container p {
+  font-size: 1em;
+  margin-bottom: 20px;
+}
+
+.apartman-container {
+  width: 80%;
+  color: black;
+  text-align: left;
+  padding: 0 20px;
+}
+
+.apartman {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 20px 0;
 }
 
 .apartman-image {
-  width: 600px; /* Širina slike apartmana */
+  width: 350px;
   height: auto;
-  border-radius: 10px; /* Okrugli rubovi */
+  border: 2px solid #ff69b4;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+.apartman-text h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.apartman-text p {
+  font-size: 1em;
+  line-height: 1.5;
 }
 </style>

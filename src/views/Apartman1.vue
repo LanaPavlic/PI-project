@@ -7,6 +7,23 @@
       <h1 class="header_title">PINK HEART APARTMENTS</h1>
       <h2 class="header_title">APARTMAN 1</h2>
     </header>
+
+    <main>
+      <div class="intro-container">
+        <h3>Dobrodošli u Apartman 1</h3>
+        <p>Uživajte u luksuznom smještaju i udobnosti našeg Apartmana 1, savršeno opremljenog za vaš odmor.</p>
+      </div>
+
+      <div class="apartman-container">
+        <div class="apartman">
+          <img src="@/views/App1/slika0.jpg" alt="Apartman 1" class="apartman-image" />
+          <div class="apartman-text">
+            <h3>O Apartmanu 1</h3>
+            <p>Apartman 1 nudi predivan pogled na okolne krajolike i udobnost koja će učiniti vaš boravak nezaboravnim. Moderno uređen, s prostranom terasom, potpuno opremljenom kuhinjom i velikim dnevnim boravkom za opuštanje.</p>
+          </div>
+        </div>
+      </div>
+    </main>
   </div>
 </template>
 
@@ -67,5 +84,53 @@ body {
   font-weight: 900;
   font-size: 2em;
   flex-grow: 1;
+}
+
+.intro-container {
+  margin-top: 120px; /* Da se izbjegne preklapanje s headerom */
+  text-align: center;
+  color: black;
+}
+
+.intro-container h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.intro-container p {
+  font-size: 1em;
+  margin-bottom: 20px;
+}
+
+.apartman-container {
+  width: 80%;
+  color: black;
+  text-align: left;
+  padding: 0 20px;
+}
+
+.apartman {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.apartman-image {
+  width: 350px;
+  height: auto;
+  border: 2px solid #ff69b4;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+.apartman-text h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.apartman-text p {
+  font-size: 1em;
+  line-height: 1.5;
 }
 </style>
