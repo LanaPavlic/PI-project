@@ -15,14 +15,18 @@
 
  <!-- Atrakcije tekst iznad fiksnih slika grada -->
     <div class="atrakcije-text" style="margin-top: 130px;">
-      Uživajte u nezaboravnom odmoru u našem apartmanu, smještenom u mirnom selu Salakovci, blizu Labina. Ovdje možete istraživati prekrasne plaže, slikovite šetnice i bogatu kulturnu baštinu. Opustite se uz more, uživajte u domaćim specijalitetima i doživite sve ljepote Istre. Rezervirajte svoj boravak i pronađite svoj kutak raja u Salakovcima!
+      Uživajte u nezaboravnom odmoru u našem apartmanu, smještenom u mirnom selu Salakovci,
+      blizu Labina. Ovdje možete istraživati prekrasne plaže, slikovite šetnice i bogatu kulturnu
+      baštinu. Opustite se uz more, uživajte u domaćim specijalitetima i doživite sve ljepote Istre.
+      Rezervirajte svoj boravak i pronađite svoj kutak raja u Salakovcima!
     </div>
 
 
     <div class="content">
       <!-- Fixed Image Set for Grad Images -->
       <div class="fixed-image-gallery">
-        <img v-for="(image, index) in imagesGrad" :key="'grad-' + index" :src="image" alt="Grad Image" class="fixed-image">
+        <img v-for="(image, index) in imagesGrad" :key="'grad-' + index" :src="image"
+             alt="Grad Image" class="fixed-image">
       </div>
 
 
@@ -56,10 +60,10 @@
         <button @click="nextImage('app3')" class="nav-button right">&#8250;</button>
       </div>
 
-  
+      <div class="thin-line"></div>
 
 <!-- Logo s lijeve strane i tekst s desne -->
-<div class="logo-container">
+<div class="logo-container-bottom">
   <img src="/logslika.png" alt="Logo" class="logo">
   <div class="logo-text">Salakovci 12b, 52220, Salakovci</div>
 </div>
@@ -185,7 +189,7 @@ html, body {
   top: 0;
   left: 0;
   right: 0;
-  border: 2px solid #ff69b4;
+  border: 3px solid #ff69b4;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -236,7 +240,7 @@ html, body {
 }
 
 .content {
-  margin-top: 150px;
+  margin-top: 50px;
 }
 
 .fixed-image-gallery {
@@ -309,6 +313,7 @@ html, body {
   padding: 10px 20px;
   margin-top: 30px;
   border: 2px solid #ff69b4;
+  border-radius: 10px;
   width: calc(100% - 40px);
   max-width: 100%;
   margin-left: auto;
@@ -316,19 +321,22 @@ html, body {
 }
 
 .atrakcije-text {
-  margin: px 0; /* Smanji razmak iznad i ispod teksta */
-  line-height: 1.5; /* Povećava razmak između redova */
-  font-size: 1.2rem; /* Povećana veličina fonta */
-  text-align: center; /* Centriranje teksta */
-  color: black; /* Ružičasta boja teksta */
-  background-color: rgba(255, 255, 255, 0.8); /* Lagana bijela pozadina */
-  padding: 10px; /* Unutarnje margine za bolji izgled */
-  border-radius: 10px; /* Okrugli rubovi pozadine */
+  margin: 30px auto;
+  line-height: 1.5;
+  font-size: 1.2rem;
+  text-align: center;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 2px solid #ff69b4;
+  border-radius: 10px;
+  width: calc(100% - 40px);
+  max-width: 100%;
+  padding: 10px;
 }
 
 .fixed-image-gallery {
-  margin-top: 0; /* Ukloni razmak iznad slika */
-  padding-top: 10px; /* Ako je potrebno, možeš dodati malo paddinga da razmakneš slike */
+  margin-top: 0;
+  padding-top: 10px;
 }
 
 
@@ -336,42 +344,58 @@ html, body {
   height: 40px;
 }
 
-.logo-container {
-  display: flex; /* Koristi flexbox za poravnavanje */
-  align-items: center; /* Vertikalno poravnanje loga i teksta */
-  justify-content: center; /* Centriranje cijelog kontejnera */
-  margin-bottom: 20px; /* Razmak ispod loga i teksta */
+.thin-line {
+  width: 80%;
+  height: 1px;
+  background-color: white;
+  border: 1px solid #ff69b4;
+  margin: 75px auto 25px;
+}
+
+
+.logo-container-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 25px;
+  margin-bottom: 20px;
 }
 
 .logo {
-  width: 50px; /* Širina loga (prilagodi prema potrebi) */
-  height: auto; /* Očuvanje omjera */
-  margin-right: 10px; /* Razmak između loga i teksta */
+  width: 50px;
+  height: auto;
+  margin-right: 10px;
 }
 
 .logo-text {
-  font-size: 20px; /* Veličina fonta za tekst */
-  color: white; /* Boja teksta */
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  text-shadow: -1px -1px 0 #ff69b4, 1px -1px 0 #ff69b4, -1px 1px 0 #ff69b4, 1px 1px 0 #ff69b4;
 }
+
 .karta-image {
-  display: block; /* Ovaj stil omogućava centriranje */
-  margin: 20px auto; /* Postavlja marginu automatski s lijeve i desne strane, a i razmak iznad i ispod */
-  max-width: 100%; /* Osiguraj da slika ne izlazi izvan granica */
-  height: auto; /* Očuvanje omjera */
+  display: block;
+  margin: 20px auto;
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #ff69b4;
 }
+
 .footer {
-  background-color: white; /* Bijela pozadina */
-  color: #FF69B4; /* Ružičasta boja teksta (možeš prilagoditi nijansu) */
-  text-align: center; /* Centriranje teksta */
-  padding: 20px; /* Unutarnji razmak */
-  position: relative; /* Pozicioniranje */
-  bottom: 0; /* Drži ga na dnu */
-  width: 100%; /* Širina podnožja */
+  background-color: white;
+  color: #FF69B4;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  border: 3px solid #ff69b4;
 }
 
 .footer-content p {
-  margin: 5px 0; /* Razmak između paragrafa */
-  font-size: 16px; /* Veličina fonta */
+  margin: 5px 0;
+  font-size: 16px;
 }
 
 </style>
