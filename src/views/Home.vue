@@ -4,7 +4,7 @@
       <img src="/slika3.png.jpg" alt="Logo" class="logo">
       <div class="title-nav-container">
         <h1 class="title">PINK HEART APARTMENTS</h1>
-          <ul>
+        <ul>
       <li><router-link :to="{ name: 'Apartman', params: { id: 1 } }">Apartman 1</router-link></li>
       <li><router-link :to="{ name: 'Apartman', params: { id: 2 } }">Apartman 2</router-link></li>
       <li><router-link :to="{ name: 'Apartman', params: { id: 3 } }">Apartman 3</router-link></li>
@@ -15,14 +15,13 @@
       </div>
     </header>
 
- <!-- Atrakcije tekst iznad fiksnih slika grada -->
+    <!-- Atrakcije tekst iznad fiksnih slika grada -->
     <div class="atrakcije-text" style="margin-top: 130px;">
       Uživajte u nezaboravnom odmoru u našem apartmanu, smještenom u mirnom selu Salakovci,
       blizu Labina. Ovdje možete istraživati prekrasne plaže, slikovite šetnice i bogatu kulturnu
       baštinu. Opustite se uz more, uživajte u domaćim specijalitetima i doživite sve ljepote Istre.
       Rezervirajte svoj boravak i pronađite svoj kutak raja u Salakovcima!
     </div>
-
 
     <div class="content">
       <!-- Fixed Image Set for Grad Images -->
@@ -31,9 +30,8 @@
              alt="Grad Image" class="fixed-image">
       </div>
 
-
+      <!-- Apartman 1 -->
       <div class="apartman-title" id="apartman1">Apartman 1</div>
-      <!-- Carousel for Apartman 1 Images -->
       <div class="image-carousel">
         <button @click="prevImage('app1')" class="nav-button left">&#8249;</button>
         <div class="carousel-images">
@@ -42,8 +40,8 @@
         <button @click="nextImage('app1')" class="nav-button right">&#8250;</button>
       </div>
 
+      <!-- Apartman 2 -->
       <div class="apartman-title" id="apartman2">Apartman 2</div>
-      <!-- Carousel for Apartman 2 Images -->
       <div class="image-carousel">
         <button @click="prevImage('app2')" class="nav-button left">&#8249;</button>
         <div class="carousel-images">
@@ -52,8 +50,8 @@
         <button @click="nextImage('app2')" class="nav-button right">&#8250;</button>
       </div>
 
+      <!-- Apartman 3 -->
       <div class="apartman-title" id="apartman3">Apartman 3</div>
-      <!-- Carousel for Apartman 3 Images -->
       <div class="image-carousel">
         <button @click="prevImage('app3')" class="nav-button left">&#8249;</button>
         <div class="carousel-images">
@@ -63,25 +61,21 @@
       </div>
 
       <div class="thin-line"></div>
+      <!-- Logo s lijeve strane i tekst s desne -->
+      <div class="logo-container-bottom">
+        <img src="/logslika.png" alt="Logo" class="logo">
+        <div class="logo-text">Salakovci 12b, 52220, Salakovci</div>
+      </div>
+      <img src="/karta.jpg" alt="Karta" class="karta-image">
+      <div class="spacer"></div>
 
-<!-- Logo s lijeve strane i tekst s desne -->
-<div class="logo-container-bottom">
-  <img src="/logslika.png" alt="Logo" class="logo">
-  <div class="logo-text">Salakovci 12b, 52220, Salakovci</div>
-</div>
-
-<img src="/karta.jpg" alt="Karta" class="karta-image">
-
-  <div class="spacer"></div>
-
-<footer class="footer">
-  <div class="footer-content">
-    <p>Email: info@pinkheartapartments.com</p>
-    <p>Telefon: +385 91 234 5678</p>
-    <p>Adresa: Salakovci 12b, 52220, Salakovci</p>
-  </div>
-</footer>
-
+      <footer class="footer">
+        <div class="footer-content">
+          <p>Email: info@pinkheartapartments.com</p>
+          <p>Telefon: +385 91 234 5678</p>
+          <p>Adresa: Salakovci 12b, 52220, Salakovci</p>
+        </div>
+      </footer>
     </div>
   </div>
 </template>
@@ -93,7 +87,7 @@ import slika3 from './Grad/slika3.jpg';
 import slika4 from './Grad/slika4.jpg';
 import slika5 from './Grad/slika5.jpg';
 import slika6 from './Grad/slika6.jpg';
-import slika7 from './Grad/slika7.jpg';
+
 
 import app1Img0 from './App1/slika1.jpg';
 import app1Img1 from './App1/slika0.jpg';
@@ -113,6 +107,11 @@ import app2Img1 from './App2/ap22.jpg';
 import app2Img2 from './App2/ap23.jpg';
 import app2Img3 from './App2/ap24.jpg';
 
+import ap31 from './App3/ap31.jpg';
+import ap32 from './App3/ap32.jpg';
+import ap33 from './App3/ap33.jpg';
+import ap34 from './App3/ap34.jpg';
+import ap35 from './App3/ap35.jpg';
 
 export default {
   name: "Home",
@@ -120,6 +119,8 @@ export default {
     return {
       imagesGrad: [slika1, slika2, slika3, slika4, slika5, slika6],
       imagesApp1: [app1Img0, app1Img1, app1Img2, app1Img3, app1Img4, app1Img5, app1Img6, app1Img7, app1Img8, app1Img9, app1Img10, app1Img11],
+      imagesApp2: [app2Img0, app2Img1, app2Img2, app2Img3],
+      imagesApp3: [ap31, ap32, ap33, ap34, ap35], // Dodane slike za Apartman 3
       currentIndexApp1: 0,
       currentIndexApp2: 0,
       currentIndexApp3: 0,
@@ -130,18 +131,18 @@ export default {
       if (type === 'app1') {
         this.currentIndexApp1 = (this.currentIndexApp1 + 1) % this.imagesApp1.length;
       } else if (type === 'app2') {
-        this.currentIndexApp2 = (this.currentIndexApp2 + 1) % this.imagesApp1.length;
+        this.currentIndexApp2 = (this.currentIndexApp2 + 1) % this.imagesApp2.length;
       } else if (type === 'app3') {
-        this.currentIndexApp3 = (this.currentIndexApp3 + 1) % this.imagesApp1.length;
+        this.currentIndexApp3 = (this.currentIndexApp3 + 1) % this.imagesApp3.length;
       }
     },
     prevImage(type) {
       if (type === 'app1') {
         this.currentIndexApp1 = (this.currentIndexApp1 - 1 + this.imagesApp1.length) % this.imagesApp1.length;
       } else if (type === 'app2') {
-        this.currentIndexApp2 = (this.currentIndexApp2 - 1 + this.imagesApp1.length) % this.imagesApp1.length;
+        this.currentIndexApp2 = (this.currentIndexApp2 - 1 + this.imagesApp2.length) % this.imagesApp2.length;
       } else if (type === 'app3') {
-        this.currentIndexApp3 = (this.currentIndexApp3 - 1 + this.imagesApp1.length) % this.imagesApp1.length;
+        this.currentIndexApp3 = (this.currentIndexApp3 - 1 + this.imagesApp3.length) % this.imagesApp3.length;
       }
     },
     visibleImages(type) {
@@ -150,10 +151,10 @@ export default {
         images = this.imagesApp1;
         currentIndex = this.currentIndexApp1;
       } else if (type === 'app2') {
-        images = this.imagesApp1;
+        images = this.imagesApp2;
         currentIndex = this.currentIndexApp2;
       } else if (type === 'app3') {
-        images = this.imagesApp1;
+        images = this.imagesApp3;
         currentIndex = this.currentIndexApp3;
       }
       return [
@@ -164,9 +165,12 @@ export default {
     },
   }
 };
+
 </script>
 
 
+
+  
 <style>
 * {
   box-sizing: border-box;
@@ -182,70 +186,64 @@ html, body {
 #app {
   overflow-x: hidden;
 }
-
 .header {
-  width: 100%;
-  max-width: 100vw;
-  background-color: #fff;
-  padding: 5px 0;
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  border: 3px solid #ff69b4;
+  width: 100%;
+  background-color: #fff;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  z-index: 1000;
+  padding: 10px 20px;
+  border-bottom: 2px solid #ff69b4;
+  z-index: 1000; /* Postavlja header iznad ostalih elemenata */
+}
+
+.content {
+  margin-top: 80px; /* Dodaje razmak ispod headera da sadržaj ne bude skriven */
 }
 
 .logo {
-  width: 100px;
+  width: 50px;
   height: auto;
-  margin-left: 20px;
 }
 
 .title-nav-container {
   display: flex;
+  flex-direction: row;
   align-items: center;
-  justify-content: space-around;
-  gap: 20px;
+  justify-content: center;
+  width: 100%;
 }
 
 .title {
   color: #ff69b4;
-  font-size: 30px;
+  font-size: 1.5em;
   font-weight: bold;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+  margin-right: 30px;
 }
 
-.title-nav-container ul,
-.title-nav-container nav {
+.title-nav-container ul {
   display: flex;
-  gap: 15px;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
 .title-nav-container ul li {
-  list-style: none;
+  margin: 0 15px;
 }
 
-.title-nav-container ul li a, 
-.title-nav-container nav a {
-  white-space: nowrap;
-  color: #ff69b4;
+.title-nav-container ul li a {
   text-decoration: none;
+  color: #ff69b4;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 1em;
 }
 
-.title-nav-container ul li a:hover,
-.title-nav-container nav a:hover {
+.title-nav-container ul li a:hover {
   text-decoration: underline;
-}
-
-.content {
-  margin-top: 50px;
 }
 
 .fixed-image-gallery {
@@ -344,6 +342,7 @@ html, body {
   padding-top: 10px;
 }
 
+
 .spacer {
   height: 40px;
 }
@@ -355,6 +354,7 @@ html, body {
   border: 1px solid #ff69b4;
   margin: 75px auto 25px;
 }
+
 
 .logo-container-bottom {
   display: flex;
@@ -401,8 +401,13 @@ html, body {
   font-size: 16px;
 }
 
-/* TABLET */
-@media (min-width: 768px) and (max-width: 1024px) {
+
+
+
+/* TABLET  */
+@media (min-width: 768px) and (max-width: 1024px/*MOIRA, ti ovdje stavi 1023px
+moje ovo je namjerna greška zbog slika s gumbima*/) {
+
   .atrakcije-text {
     width: calc(100% - 20px);
     margin: 0 10px;
@@ -418,6 +423,7 @@ html, body {
     padding: 8px;
   }
 
+  /*Set s Image caruselom*/
   .image-carousel {
     width: 90%;
     margin: 20px auto;
@@ -445,9 +451,22 @@ html, body {
   }
 
   .nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     width: 30px;
     height: 30px;
     font-size: 20px;
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    opacity: 1;
   }
 
   .nav-button.left {
@@ -457,6 +476,7 @@ html, body {
   .nav-button.right {
     right: -20px;
   }
+  /*END*/
 
   .thin-line {
     margin: 50px auto 20px;
@@ -470,76 +490,136 @@ html, body {
   .karta-image {
     width: calc(100% - 30px);
     margin: 0 auto;
+    display: block;
     padding-left: 15px;
     padding-right: 15px;
     border: 1px solid #ff69b4;
   }
 }
 
+
+
+
 /* MOBITEL */
 @media (max-width: 767px) {
   .header {
+    display: flex;
+    align-items: center;
     padding: 10px 15px;
+    background-color: #fff;
     gap: 8px;
   }
 
   .logo {
     width: 20px;
+    height: auto;
     margin-right: 5px;
   }
 
   .title {
     font-size: 20px;
     color: #ff69b4;
+    font-weight: bold;
+    text-align: left;
     flex: 1;
+    white-space: nowrap;
     overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .nav-links {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
     gap: 10px;
     margin-left: 5px;
+    white-space: nowrap;
   }
 
   .nav-links a {
     font-size: 9px;
+    color: #ff69b4;
+    text-decoration: none;
     margin: 0 5px;
   }
+
+  .nav-links a:hover {
+    text-decoration: underline;
+  }
+  /*END HEADER*/
 
   .atrakcije-text {
     width: calc(100% - 20px);
     margin: 10px;
     font-size: 13px;
+    text-align: center;
+  }
+
+  .fixed-image-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 0 auto;
+    padding: 10px;
   }
 
   .fixed-image {
     width: 45%;
+    margin: 0 5px;
+    border-radius: 10px;
   }
 
   .apartman-title {
     font-size: 20px;
+    text-align: center;
+    color: #ff69b4;
+    background-color: #fff;
     padding: 8px 15px;
     margin: 20px auto;
+    border: 2px solid #ff69b4;
+    border-radius: 12px;
+    width: fit-content;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   }
 
+  /* Set s Image caruselom */
   .image-carousel {
     width: 100%;
     margin: 15px auto;
+    position: relative;
   }
 
   .carousel-images {
+    display: flex;
+    justify-content: center;
     gap: 5px;
+    overflow: hidden;
     width: 100%;
   }
 
   .carousel-image {
     width: calc(100% - 20px);
     max-width: 200px;
+    border-radius: 10px;
   }
 
   .nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     width: 25px;
     height: 25px;
     font-size: 18px;
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    opacity: 1;
   }
 
   .nav-button.left {
@@ -549,6 +629,7 @@ html, body {
   .nav-button.right {
     right: 5px;
   }
+  /* Kraj carusela */
 
   .thin-line {
     margin: 40px auto 15px;
@@ -556,12 +637,15 @@ html, body {
 
   .logo-container-bottom {
     flex-direction: column;
+    text-align: center;
     margin-top: 15px;
   }
 
   .karta-image {
     width: calc(100% - 20px);
     margin: 0 auto;
+    display: block;
+    border: 1px solid #ff69b4;
   }
 
   .footer {
@@ -569,5 +653,6 @@ html, body {
     padding: 15px;
   }
 }
+
 
 </style>

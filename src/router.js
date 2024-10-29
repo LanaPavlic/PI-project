@@ -4,6 +4,7 @@ import Signup from './views/Signup.vue';
 import Homepage from './components/HelloWorld.vue';
 import Home from './views/Home.vue';
 import Aktivnosti from './views/Aktivnosti.vue';
+import Apartman from './views/Apartman.vue';
 
 const routes = [
     {
@@ -34,8 +35,9 @@ const routes = [
     {
       path: '/apartman/:id',
       name: 'Apartman',
-      component: () => import('./views/Apartman.vue') 
-    },
+      component: () => import('@/views/Apartman.vue')
+    }
+    
 ];
 
 const router = createRouter({

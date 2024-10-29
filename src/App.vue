@@ -1,4 +1,8 @@
 <template>
+<div id="app">
+    <router-view v-if="isApartmanRoute" />
+  </div>
+
   <header v-if="!hideHeader" class="header">
     <div class="logo-container">
       <img src="/slika3.png.jpg" alt="Logo" class="logo" />
@@ -21,6 +25,7 @@
 </template>
 
 <script setup>
+
 import { ref } from 'vue';
 import { useRoute } from 'vue-router';
 
