@@ -8,7 +8,7 @@
       <div class="header_titles">
         <h1 class="header_title">PINK HEART APARTMENTS</h1>
         <span class="divider">|</span>
-        <h2 class="header_title">ATRAKCIJE I AKTIVNOSTI</h2>
+        <h2 class="header_title">JESI USPILA MOIRA</h2>
       </div>
     </header>
 
