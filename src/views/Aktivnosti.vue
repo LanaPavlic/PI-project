@@ -102,7 +102,7 @@ export default {
   name: "Aktivnosti",
   methods: {
     goHome() {
-      this.$router.push({ name: 'Home' }); // 'Home' je naziv rute za Home.vue
+      this.$router.push({ name: 'Home' });
     },
   },
 };
@@ -156,47 +156,47 @@ body {
 
 .header {
   display: flex;
-  align-items: center; /* Vertikalno centriranje */
-  justify-content: center; /* Lijevo poravnanje */
+  align-items: center;
+  justify-content: center;
 }
 
 .header_titles {
   display: flex;
-  align-items: center; /* Vertikalno centriranje */
+  align-items: center;
 }
 
 .header_title {
-  font-size: 0.9em; /* Manja veličina fonta */
-  margin: 0 5px; /* Razmak između naslova */
+  font-size: 0.9em;
+  margin: 0 5px;
 }
 
 .divider {
-  margin: 0 5px; /* Razmak s lijeve i desne strane */
-  color: black; /* Boja crte */
-  font-size: 2em; /* Veličina crte */
+  margin: 0 5px;
+  color: black;
+  font-size: 2em;
 }
 
 
 
 .intro-container {
-  text-align: center; /* Centriranje teksta */
-  margin-top: 120px; /* Razmak od headera */
-  color: black; /* Boja teksta */
-  display: flex; /* Dodano za centriranje */
-  flex-direction: column; /* Poravnanje u stupcu */
-  align-items: center; /* Centriranje središnjeg sadržaja */
-  width: 100%; /* Postavi širinu na 100% */
+  text-align: center;
+  margin-top: 120px;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
 .intro-container h3,
 .intro-container p {
-  margin-left: 350px; /* Pomakni tekst prema desno */
+  margin-left: 350px;
 }
 .activities-container {
   width: 80%;
   color: black;
   text-align: left;
-  padding: 0 30px; /* Dodaj padding sa lijeve i desne strane */
+  padding: 0 30px;
 }
 
 .activity {

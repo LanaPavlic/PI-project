@@ -87,7 +87,7 @@ body {
 }
 
 .intro-container {
-  margin-top: 120px; /* Da se izbjegne preklapanje s headerom */
+  margin-top: 120px;
   text-align: center;
   color: black;
 }
