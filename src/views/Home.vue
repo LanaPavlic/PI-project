@@ -4,10 +4,12 @@
       <img src="/slika3.png.jpg" alt="Logo" class="logo">
       <div class="title-nav-container">
         <h1 class="title">PINK HEART APARTMENTS</h1>
+          <ul>
+      <li><router-link :to="{ name: 'Apartman', params: { id: 1 } }">Apartman 1</router-link></li>
+      <li><router-link :to="{ name: 'Apartman', params: { id: 2 } }">Apartman 2</router-link></li>
+      <li><router-link :to="{ name: 'Apartman', params: { id: 3 } }">Apartman 3</router-link></li>
+    </ul>
         <nav>
-      <RouterLink to="/apartman1">Apartman 1</RouterLink>
-      <RouterLink to="/apartman2">Apartman 2</RouterLink>
-      <RouterLink to="/apartman3">Apartman 3</RouterLink>
       <RouterLink to="/aktivnosti">Atrakcije i aktivnosti</RouterLink>
     </nav>
       </div>
@@ -116,7 +118,7 @@ export default {
   name: "Home",
   data() {
     return {
-      imagesGrad: [slika1, slika2, slika3, slika4, slika5, slika6, slika7],
+      imagesGrad: [slika1, slika2, slika3, slika4, slika5, slika6],
       imagesApp1: [app1Img0, app1Img1, app1Img2, app1Img3, app1Img4, app1Img5, app1Img6, app1Img7, app1Img8, app1Img9, app1Img10, app1Img11],
       currentIndexApp1: 0,
       currentIndexApp2: 0,
@@ -205,38 +207,40 @@ html, body {
 
 .title-nav-container {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  flex-grow: 1;
-  padding: 0 20px;
+  justify-content: space-around;
+  gap: 20px;
 }
 
 .title {
   color: #ff69b4;
   font-size: 30px;
   font-weight: bold;
-  text-align: center;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
 
-.nav-links {
+.title-nav-container ul,
+.title-nav-container nav {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 10px;
+  gap: 15px;
 }
 
-.nav-links a {
+.title-nav-container ul li {
+  list-style: none;
+}
+
+.title-nav-container ul li a, 
+.title-nav-container nav a {
   white-space: nowrap;
   color: #ff69b4;
   text-decoration: none;
-  margin: 0 15px;
   font-weight: bold;
   font-size: 18px;
 }
 
-.nav-links a:hover {
+.title-nav-container ul li a:hover,
+.title-nav-container nav a:hover {
   text-decoration: underline;
 }
 
@@ -340,7 +344,6 @@ html, body {
   padding-top: 10px;
 }
 
-
 .spacer {
   height: 40px;
 }
@@ -352,7 +355,6 @@ html, body {
   border: 1px solid #ff69b4;
   margin: 75px auto 25px;
 }
-
 
 .logo-container-bottom {
   display: flex;
@@ -399,13 +401,8 @@ html, body {
   font-size: 16px;
 }
 
-
-
-
-/* TABLET  */
-@media (min-width: 768px) and (max-width: 1024px/*MOIRA, ti ovdje stavi 1023px
-moje ovo je namjerna greška zbog slika s gumbima*/) {
-
+/* TABLET */
+@media (min-width: 768px) and (max-width: 1024px) {
   .atrakcije-text {
     width: calc(100% - 20px);
     margin: 0 10px;
@@ -421,7 +418,6 @@ moje ovo je namjerna greška zbog slika s gumbima*/) {
     padding: 8px;
   }
 
-  /*Set s Image caruselom*/
   .image-carousel {
     width: 90%;
     margin: 20px auto;
@@ -449,22 +445,9 @@ moje ovo je namjerna greška zbog slika s gumbima*/) {
   }
 
   .nav-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
     width: 30px;
     height: 30px;
     font-size: 20px;
-    background-color: #ff69b4;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10;
-    opacity: 1;
   }
 
   .nav-button.left {
@@ -474,7 +457,6 @@ moje ovo je namjerna greška zbog slika s gumbima*/) {
   .nav-button.right {
     right: -20px;
   }
-  /*END*/
 
   .thin-line {
     margin: 50px auto 20px;
@@ -488,136 +470,76 @@ moje ovo je namjerna greška zbog slika s gumbima*/) {
   .karta-image {
     width: calc(100% - 30px);
     margin: 0 auto;
-    display: block;
     padding-left: 15px;
     padding-right: 15px;
     border: 1px solid #ff69b4;
   }
 }
 
-
-
-
 /* MOBITEL */
 @media (max-width: 767px) {
   .header {
-    display: flex;
-    align-items: center;
     padding: 10px 15px;
-    background-color: #fff;
     gap: 8px;
   }
 
   .logo {
     width: 20px;
-    height: auto;
     margin-right: 5px;
   }
 
   .title {
     font-size: 20px;
     color: #ff69b4;
-    font-weight: bold;
-    text-align: left;
     flex: 1;
-    white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis;
   }
 
   .nav-links {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
     gap: 10px;
     margin-left: 5px;
-    white-space: nowrap;
   }
 
   .nav-links a {
     font-size: 9px;
-    color: #ff69b4;
-    text-decoration: none;
     margin: 0 5px;
   }
-
-  .nav-links a:hover {
-    text-decoration: underline;
-  }
-  /*END HEADER*/
 
   .atrakcije-text {
     width: calc(100% - 20px);
     margin: 10px;
     font-size: 13px;
-    text-align: center;
-  }
-
-  .fixed-image-gallery {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin: 0 auto;
-    padding: 10px;
   }
 
   .fixed-image {
     width: 45%;
-    margin: 0 5px;
-    border-radius: 10px;
   }
 
   .apartman-title {
     font-size: 20px;
-    text-align: center;
-    color: #ff69b4;
-    background-color: #fff;
     padding: 8px 15px;
     margin: 20px auto;
-    border: 2px solid #ff69b4;
-    border-radius: 12px;
-    width: fit-content;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   }
 
-  /* Set s Image caruselom */
   .image-carousel {
     width: 100%;
     margin: 15px auto;
-    position: relative;
   }
 
   .carousel-images {
-    display: flex;
-    justify-content: center;
     gap: 5px;
-    overflow: hidden;
     width: 100%;
   }
 
   .carousel-image {
     width: calc(100% - 20px);
     max-width: 200px;
-    border-radius: 10px;
   }
 
   .nav-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
     width: 25px;
     height: 25px;
     font-size: 18px;
-    background-color: #ff69b4;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10;
-    opacity: 1;
   }
 
   .nav-button.left {
@@ -627,7 +549,6 @@ moje ovo je namjerna greška zbog slika s gumbima*/) {
   .nav-button.right {
     right: 5px;
   }
-  /* Kraj carusela */
 
   .thin-line {
     margin: 40px auto 15px;
@@ -635,15 +556,12 @@ moje ovo je namjerna greška zbog slika s gumbima*/) {
 
   .logo-container-bottom {
     flex-direction: column;
-    text-align: center;
     margin-top: 15px;
   }
 
   .karta-image {
     width: calc(100% - 20px);
     margin: 0 auto;
-    display: block;
-    border: 1px solid #ff69b4;
   }
 
   .footer {
@@ -651,6 +569,5 @@ moje ovo je namjerna greška zbog slika s gumbima*/) {
     padding: 15px;
   }
 }
-
 
 </style>
