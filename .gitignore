@@ -1,0 +1,14 @@
+# Node modules
+node_modules/
+
+# Log files
+*.log
+
+# Firebase credentials
+firebase-config.json
+
+# VSCode settings
+.vscode/
+
+# Environment files
+.env
