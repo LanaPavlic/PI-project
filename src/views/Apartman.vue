@@ -125,15 +125,20 @@ import ap35 from './App3/ap35.jpg';
 
 import Kalendar from './Kalendar.vue';
 import { db } from '@/firebase';
-import { doc, getDoc } from "firebase/firestore"; // Import Firebase Firestore functions
+import { doc, getDoc } from "firebase/firestore";
 
 export default {
   components: {
     Kalendar
   },
+  props: {
+    id: {
+      type: String,
+      required: true
+    }
+  },
   data() {
     return {
-      id: this.$route.params.id,
       reservedDays: [],
       imagesForApartments: {
         1: [slika1, slika2, slika3, slika4, slika5, slika6],
@@ -153,13 +158,12 @@ export default {
     },
     async fetchReservedDays() {
       try {
-        // Reference to the Firestore document for the specific apartment
         const docRef = doc(db, "apartments", this.id);
         const docSnap = await getDoc(docRef);
 
         if (docSnap.exists()) {
-          // Convert reservedDays from timestamps to Date objects
           this.reservedDays = docSnap.data().reservedDays.map((timestamp) => timestamp.toDate());
+          console.log("Učitani rezervirani dani:", this.reservedDays);
         } else {
           console.log("Document does not exist!");
         }
@@ -169,7 +173,7 @@ export default {
     }
   },
   created() {
-    this.fetchReservedDays(); // Fetch reserved days when the component is created
+    this.fetchReservedDays();
   }
 };
 </script>

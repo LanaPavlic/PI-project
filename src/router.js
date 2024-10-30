@@ -35,7 +35,8 @@ const routes = [
     {
       path: '/apartman/:id',
       name: 'Apartman',
-      component: () => import('@/views/Apartman.vue')
+      component: Apartman,
+      props: true
     }
     
 ];
