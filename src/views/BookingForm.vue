@@ -17,6 +17,21 @@
         <input type="date" id="departure" v-model="departureDate" required />
       </div>
 
+      <div class="form-group">
+        <label for="numGuests">Broj osoba</label>
+        <input type="number" id="numGuests" v-model="numGuests" required min="1" />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" v-model="email" required />
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Broj mobitela</label>
+        <input type="tel" id="phone" v-model="phone" required />
+      </div>
+
       <button type="submit">Pošalji rezervaciju</button>
     </form>
   </div>
@@ -38,7 +53,10 @@ export default {
     return {
       name: '',
       arrivalDate: '',
-      departureDate: ''
+      departureDate: '',
+      numGuests: 1,
+      email: '',
+      phone: ''
     };
   },
   methods: {
@@ -50,6 +68,9 @@ export default {
           name: this.name,
           arrivalDate: this.arrivalDate,
           departureDate: this.departureDate,
+          numGuests: this.numGuests,
+          email: this.email,
+          phone: this.phone,
           createdAt: Timestamp.now() // Postavi trenutni datum i vrijeme
         };
 
@@ -61,6 +82,9 @@ export default {
         this.name = '';
         this.arrivalDate = '';
         this.departureDate = '';
+        this.numGuests = 1;
+        this.email = '';
+        this.phone = '';
 
         // Prikaz poruke korisniku
         alert("Rezervacija uspješno poslana!");
