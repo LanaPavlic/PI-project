@@ -128,7 +128,7 @@ import ap35 from './App3/ap35.jpg';
 import Kalendar from './Kalendar.vue';
 import BookingForm from './BookingForm.vue';
 import { db } from '@/firebase';
-import { doc, getDoc } from "firebase/firestore";
+import { collection, query, where, getDocs } from "firebase/firestore";
 
 export default {
   components: {
@@ -162,15 +162,23 @@ export default {
     },
     async fetchReservedDays() {
       try {
-        const docRef = doc(db, "apartments", this.id);
-        const docSnap = await getDoc(docRef);
+        const bookingsRef = collection(db, "bookings");
+        const q = query(bookingsRef, where("apartmentId", "==", this.id));
+        const querySnapshot = await getDocs(q);
 
-        if (docSnap.exists()) {
-          this.reservedDays = docSnap.data().reservedDays.map((timestamp) => timestamp.toDate());
-          console.log("Učitani rezervirani dani:", this.reservedDays);
-        } else {
-          console.log("Document does not exist!");
-        }
+        this.reservedDays = [];
+
+        querySnapshot.forEach((doc) => {
+          const booking = doc.data();
+          const arrivalDate = new Date(booking.arrivalDate);
+          const departureDate = new Date(booking.departureDate);
+
+          // Dodaj sve dane unutar rezervacije u reservedDays
+          for (let d = new Date(arrivalDate); d <= departureDate; d.setDate(d.getDate() + 1)) {
+            this.reservedDays.push(new Date(d));
+          }
+        });
+        console.log("Učitani rezervirani dani:", this.reservedDays);
       } catch (error) {
         console.error("Error fetching reserved days: ", error);
       }
@@ -181,6 +189,7 @@ export default {
   }
 };
 </script>
+
 
 <style scoped>
 * { 

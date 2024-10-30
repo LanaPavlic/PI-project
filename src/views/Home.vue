@@ -498,8 +498,6 @@ moje ovo je namjerna greška zbog slika s gumbima*/) {
 }
 
 
-
-
 /* MOBITEL */
 @media (max-width: 767px) {
   .header {

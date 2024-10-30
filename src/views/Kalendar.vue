@@ -51,9 +51,11 @@ export default {
     isDayUnavailable(day) {
       const date = new Date(this.currentYear, this.currentMonth, day);
       return this.reservedDays.some(reserved => {
-        const reservedDate = new Date(reserved.seconds * 1000); // Pretvaramo Firestore timestamp u Date objekt
-        console.log("Provjera datuma:", reservedDate.toDateString(), "i trenutni dan:", date.toDateString());
-        return reservedDate.getTime() === date.getTime(); // Uspoređujemo vrijeme u milisekundama
+        return (
+            date.getDate() === reserved.getDate() &&
+            date.getMonth() === reserved.getMonth() &&
+            date.getFullYear() === reserved.getFullYear()
+        );
       });
     },
     prevMonth() {
