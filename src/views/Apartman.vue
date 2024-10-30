@@ -94,6 +94,9 @@
             <li>Udaljenost grada: 6 km (Labin)</li>
             <li>Udaljenost obale/kupalista: 4,5 km (Šljunčana plaža)</li>
           </ul>
+
+          <h4>Dostupnost</h4>
+          <Kalendar :apartmentId="id" :reservedDays="reservedDays" />
         </div>
 
       </div>
@@ -120,10 +123,18 @@ import ap33 from './App3/ap33.jpg';
 import ap34 from './App3/ap34.jpg';
 import ap35 from './App3/ap35.jpg';
 
+import Kalendar from './Kalendar.vue';
+import { db } from '@/firebase';
+import { doc, getDoc } from "firebase/firestore"; // Import Firebase Firestore functions
+
 export default {
+  components: {
+    Kalendar
+  },
   data() {
     return {
       id: this.$route.params.id,
+      reservedDays: [],
       imagesForApartments: {
         1: [slika1, slika2, slika3, slika4, slika5, slika6],
         2: [ap21, ap22, ap23, ap24],
@@ -139,7 +150,26 @@ export default {
   methods: {
     goHome() {
       this.$router.push({ name: 'Home' });
+    },
+    async fetchReservedDays() {
+      try {
+        // Reference to the Firestore document for the specific apartment
+        const docRef = doc(db, "apartments", this.id);
+        const docSnap = await getDoc(docRef);
+
+        if (docSnap.exists()) {
+          // Convert reservedDays from timestamps to Date objects
+          this.reservedDays = docSnap.data().reservedDays.map((timestamp) => timestamp.toDate());
+        } else {
+          console.log("Document does not exist!");
+        }
+      } catch (error) {
+        console.error("Error fetching reserved days: ", error);
+      }
     }
+  },
+  created() {
+    this.fetchReservedDays(); // Fetch reserved days when the component is created
   }
 };
 </script>
