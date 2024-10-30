@@ -9,12 +9,12 @@
 
       <div class="form-group">
         <label for="arrival">Datum dolaska</label>
-        <input type="date" id="arrival" v-model="arrivalDate" required />
+        <input type="date" id="arrival" v-model="arrivalDate" @change="calculatePrice" required />
       </div>
 
       <div class="form-group">
         <label for="departure">Datum odlaska</label>
-        <input type="date" id="departure" v-model="departureDate" required />
+        <input type="date" id="departure" v-model="departureDate" @change="calculatePrice" required />
       </div>
 
       <div class="form-group">
@@ -30,6 +30,11 @@
       <div class="form-group">
         <label for="phone">Broj mobitela</label>
         <input type="tel" id="phone" v-model="phone" required />
+      </div>
+
+      <div class="form-group">
+        <label for="price">Ukupna cijena</label>
+        <input type="text" id="price" :value="price + ' €'" readonly />
       </div>
 
       <button type="submit">Pošalji rezervaciju</button>
@@ -56,10 +61,22 @@ export default {
       departureDate: '',
       numGuests: 1,
       email: '',
-      phone: ''
+      phone: '',
+      price: 0 // Dodano polje za cijenu
     };
   },
   methods: {
+    // Funkcija za izračun cijene
+    calculatePrice() {
+      if (this.arrivalDate && this.departureDate) {
+        const arrival = new Date(this.arrivalDate);
+        const departure = new Date(this.departureDate);
+        
+        // Izračun broja dana
+        const days = Math.floor((departure - arrival) / (1000 * 60 * 60 * 24));
+        this.price = days > 0 ? days * 85 : 0; // Postavi cijenu samo ako je broj dana veći od 0
+      }
+    },
     async submitBooking() {
       try {
         // Priprema podataka za slanje
@@ -71,6 +88,7 @@ export default {
           numGuests: this.numGuests,
           email: this.email,
           phone: this.phone,
+          price: this.price, // Dodana cijena u podatke
           createdAt: Timestamp.now() // Postavi trenutni datum i vrijeme
         };
 
@@ -85,6 +103,7 @@ export default {
         this.numGuests = 1;
         this.email = '';
         this.phone = '';
+        this.price = 0;
 
         // Prikaz poruke korisniku
         alert("Rezervacija uspješno poslana!");
