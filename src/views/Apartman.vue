@@ -97,6 +97,8 @@
 
           <h4>Dostupnost</h4>
           <Kalendar :apartmentId="id" :reservedDays="reservedDays" />
+
+          <BookingForm :apartmentId="id" />
         </div>
 
       </div>
@@ -124,12 +126,14 @@ import ap34 from './App3/ap34.jpg';
 import ap35 from './App3/ap35.jpg';
 
 import Kalendar from './Kalendar.vue';
+import BookingForm from './BookingForm.vue';
 import { db } from '@/firebase';
 import { doc, getDoc } from "firebase/firestore";
 
 export default {
   components: {
-    Kalendar
+    Kalendar,
+    BookingForm
   },
   props: {
     id: {
