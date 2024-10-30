@@ -43,7 +43,59 @@
             <li>Pegla</li>
             <li>Internet (besplatan, bežičan)</li>
           </ul>
+          <h4>Prostorije</h4>
+          <ul>
+            <li>Topla i hladna voda u kuhinji</li>
+            <li>Dnevna soba</li>
+            <li>Kauč na razvlačenje (2 mjesto/a)</li>
+            <li>Kuhinja-blagovaonica</li>
+            <li>Kupaonica</li>
+            <li>Toalet: topla i hladna voda, Tuš</li>
+            <li>Spavaća soba: Bračni krevet (2 mjesto/a)</li>
+          </ul>
+
+          <h4>Oprema</h4>
+          <ul>
+            <li>Električne ploče</li>
+            <li>Hladnjak</li>
+            <li>Napa</li>
+            <li>Pretinac za zamrzavanje</li>
+            <li>Aparat za kavu</li>
+            <li>Mikrovalna pećnica</li>
+            <li>Perilica rublja</li>
+            <li>Perilica posuđa</li>
+            <li>Usisavač</li>
+            <li>Pekara</li>
+          </ul>
+
+          <h4>Energija/grijanje</h4>
+          <ul>
+            <li>Potpuna toplinska izolacija</li>
+            <li>Klima uređaj h/c</li>
+          </ul>
+
+          <h4>Okućnica</h4>
+          <ul>
+            <li>Vrtni namještaj</li>
+            <li>Gratis parking na parceli: 4 mjesto/a</li>
+            <li>Roštilj</li>
+            <li>Broj ležaljki: 4</li>
+            <li>Terasa ili slično br. 1: Otvorena terasa</li>
+            <li>Terasa ili slično br. 2: Natkrivena terasa</li>
+            <li>Terasa ili slično br. 3: Otvorena terasa</li>
+          </ul>
+
+          <h4>Okolica</h4>
+          <ul>
+            <li>Novoo bjavljen smještaj</li>
+            <li>Udaljenost do zračne luke: PUY : 40 km</li>
+            <li>Udaljenost od trgovine: 3 km</li>
+            <li>Udaljenost restorana: 3,5 km</li>
+            <li>Udaljenost grada: 6 km (Labin)</li>
+            <li>Udaljenost obale/kupalista: 4,5 km (Šljunčana plaža)</li>
+          </ul>
         </div>
+
       </div>
     </main>
   </div>
@@ -75,7 +127,7 @@ export default {
       imagesForApartments: {
         1: [slika1, slika2, slika3, slika4, slika5, slika6],
         2: [ap21, ap22, ap23, ap24],
-        3: [ap31, ap32, ap33, ap34, ap35] // Privremene slike za apartman 3
+        3: [ap31, ap32, ap33, ap34, ap35]
       }
     };
   },
