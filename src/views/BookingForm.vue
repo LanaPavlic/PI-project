@@ -93,7 +93,6 @@ export default {
     },
     async submitBooking() {
       try {
-        // Provjera preklapanja datuma
         const isOverlap = await this.checkDateOverlap();
         if (isOverlap) {
           alert("Odabrani datumi preklapaju se s postojećom rezervacijom. Odaberite druge datume.");

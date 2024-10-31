@@ -103,6 +103,13 @@
 
       </div>
     </main>
+    <footer class="footer">
+        <div class="footer-content">
+          <p>Email: info@pinkheartapartments.com</p>
+          <p>Telefon: +385 91 234 5678</p>
+          <p>Adresa: Salakovci 12b, 52220, Salakovci</p>
+        </div>
+      </footer>
   </div>
 </template>
 
