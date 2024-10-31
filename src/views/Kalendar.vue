@@ -83,26 +83,48 @@ export default {
   max-width: 400px;
   margin: 20px auto;
   text-align: center;
+  border: 1px solid black; /* Zaobljeni crni okvir */
+  border-radius: 10px;
+  padding: 15px;
 }
+
 .calendar-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
 }
+
+.calendar-header button {
+  background-color: #FF69B4; /* Roza boja */
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.calendar-header button:hover {
+  background-color: #e05598; /* Malo tamnija nijansa za hover */
+}
+
 .calendar-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
 }
+
 .day-header {
   font-weight: bold;
 }
+
 .calendar-day {
   padding: 10px;
   margin: 5px;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
+
 .unavailable {
   color: #ccc;
   text-decoration: line-through;
