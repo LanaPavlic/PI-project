@@ -75,14 +75,14 @@ body {
 }
 
 .logo {
-  width: 100px; /* prilagodi veličinu po potrebi */
+  width: 100px;
   height: auto;
 }
 
 .header_title {
   color: #ff00bf;
   font-weight: 900;
-  font-size: 2em;
+  font-size: 2rem !important;
   flex-grow: 1;
   text-align: center;
 }
@@ -113,38 +113,38 @@ body {
 }
 
 .image-title {
-  color: black; /* Ružičasta boja */
-  font-weight: 700; /* Debeli font */
-  font-size: 1.5em; /* Veličina fonta */
-  text-align: center; /* Centriranje teksta */
-  margin-bottom: 5px; /* Smanji razmak ispod naslova */
+  color: black;
+  font-weight: 700;
+  font-size: 1.5em;
+  text-align: center;
+  margin-bottom: 5px;
 }
 
 .zvjlog-image {
-  max-width: 100px; /* Prilagodi veličinu po potrebi */
-  height: auto;     /* Održava proporcije slike */
-  margin: 5px 0;   /* Smanji razmak iznad i ispod slike */
+  max-width: 100px;
+  height: auto;
+  margin: 5px 0;
 }
 
 .center-image {
-  max-width: 120%;        /* Povećana maksimalna širina na 120% */
-  max-height: 400px;     /* Povećana maksimalna visina na 400px */
-  height: auto;          /* Održava proporcije slike */
-  margin: 5px 0;         /* Smanji razmak iznad i ispod slike */
+  max-width: 120%;
+  max-height: 400px;
+  height: auto;
+  margin: 5px 0;
 }
 
 .image-container {
   display: flex;
-  flex-direction: column; /* Stavljamo elemente jedan ispod drugog */
-  justify-content: flex-start; /* Poravnaj gornji dio */
-  align-items: center;    /* Centriranje slika horizontalno */
-  margin-top: 120px;      /* Smanji razmak iznad slike, prilagodi po potrebi */
-  padding: 10px;         /* Razmak unutar okvira */
-  border: 5px solid white; /* Bijeli okvir oko slike */
-  border-radius: 10px;   /* Zaobljeni rubovi okvira */
-  background-color: rgba(255, 255, 255, 0.8); /* Pozadina unutar okvira s malo prozirnosti */
-  max-height: 100%;      /* Osiguraj da se ne prelazi visina ekrana */
-  overflow: hidden;      /* Skriveni sadržaj koji izlazi iz okvira */
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 120px;
+  padding: 10px;
+  border: 5px solid white;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  max-height: 100%;
+  overflow: hidden;
 }
 
 
@@ -223,4 +223,6 @@ p {
 .link:hover {
   text-decoration: underline;
 }
+
+
 </style>

@@ -112,7 +112,7 @@ body {
 .header_title {
   color: #ff69b4;
   font-weight: 900;
-  font-size: 2em;
+  font-size: 2rem !important;
   flex-grow: 1;
 }
 
@@ -198,5 +198,16 @@ p {
 
 .link:hover {
   text-decoration: underline;
+}
+
+/* MOBITEL */
+@media (max-width: 480px) {
+  .header_title {
+    font-size: 1.5rem !important;
+  }
+
+  .form_style {
+    font-size: 14px;
+  }
 }
 </style>
